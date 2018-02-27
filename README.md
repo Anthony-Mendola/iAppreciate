@@ -7,7 +7,7 @@ The iAppreciate application allows you to:
 1. Login or Signup with your own account
 2. View your daily positive aspects, weekly, monthly or any other user's positive aspects.
 3. Create, Edit, and Delete your iAppreciate details.
-4. You can also share your user page and vistors don't have to login to view.
+4. You can also share your user page and visitors don't have to login to view.
 
 ## Installation
 
