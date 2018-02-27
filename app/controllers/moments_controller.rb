@@ -54,7 +54,7 @@ class MomentsController < ApplicationController
 
   delete '/moments/:id' do
     @moment = Moment.find_by_id(params[:id])
-    @Moment.destroy
+    @moment.destroy
     redirect '/moments'
   end
 

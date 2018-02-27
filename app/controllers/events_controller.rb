@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 
-    get '/moments/new' do
+    get '/events/new' do
       redirect_if_not_logged_in
-      erb :'moments/new'
+      erb :'/events/new'
     end
 
     post '/events/new' do
@@ -35,5 +35,5 @@ class EventsController < ApplicationController
       @event.destroy
       redirect '/moments'
     end
-  
+
 end
