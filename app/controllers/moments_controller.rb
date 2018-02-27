@@ -16,7 +16,7 @@ class MomentsController < ApplicationController
   end
 
   post '/moments/new' do
-    Moment.create(:name => params[:name], :list_id => params[:list_id])
+    Moment.create(:name => params[:name], :event_id => params[:event_id])
     redirect '/moments'
     end
 
@@ -29,7 +29,7 @@ class MomentsController < ApplicationController
 
   post '/moments/new/:id' do
     @event = Event.find_by_id(params[:id])
-    Moment.create(:name => params[:name], :list_id => params[:id])
+    Moment.create(:name => params[:name], :event_id => params[:id])
     redirect '/moments'
   end
 
