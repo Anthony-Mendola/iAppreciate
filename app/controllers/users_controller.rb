@@ -18,6 +18,13 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/login' do
+    if logged_in?
+      redirect '/moments'
+    else
+      erb :'users/login'
+    end
+  end
 
   post '/login' do
     @user = User.find_by(:username => params[:username])
@@ -38,5 +45,4 @@ class UsersController < ApplicationController
       redirect to '/'
     end
   end
-
 end
