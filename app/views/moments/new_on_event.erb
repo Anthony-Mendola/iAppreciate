@@ -1,0 +1,6 @@
+<h1>New Moment on <%= @event.name %></h1>
+
+<form method="post" action="/moments/new/<%= @event.id %>">
+<input type="text" name="name" placeholder="Moment Name">
+<input class="btn btn-primary" type="submit" name="create" value="Create">
+</form>
