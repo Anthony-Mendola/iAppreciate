@@ -35,5 +35,5 @@ class EventsController < ApplicationController
       @event.destroy
       redirect '/moments'
     end
-  end
+  
 end

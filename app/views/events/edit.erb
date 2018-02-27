@@ -1,0 +1,15 @@
+<h1>Edit Event Name</h1>
+
+<form method="post" action="/events/<%=@event.id%>">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+<input type="text" name="name" value="<%=@event.name%>"><br><br>
+
+<% @event.moments.each do |moment| %>
+<h1><i class="fa fa-minus"></i><%= moment.name %></h1>
+<a href="/moments/<%= moment.id %>/edit"><i class="fa fa-pencil"></i> Edit Moment</a>
+<a href="/moments/<%= moment.id %>/delete"><i class="fa fa-times"></i> Delete Moment</a>
+<% end %>
+
+<br>
+<input class="btn btn-primary" type="submit" name="update" value="Update">
+</form>
