@@ -11,26 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   </head>
 
-  <body>
-    <% if flash[:success] %>
-      <div class="alert alert-success">
-        <%= flash[:success] %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-    <% end %>
-    <% if flash[:error] %>
-      <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <%= flash[:error] %>
-      </div>
-    <% end %>
+  <body bgcolor="#469CFE" !important >
+
     <%if logged_in?%>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"> <img src="https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1010574831,width=178,height=178/coldplay-flower-of-life.png" width="40"> iAppreciate</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <a class="navbar-brand nav-link" href="/"> <img src="https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1010574831,width=178,height=178/coldplay-flower-of-life.png" width="40">&nbspiAppreciate</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

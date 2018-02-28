@@ -105,7 +105,7 @@
   }
 
   .nav-link {
-    color: #f8ffe7 !important;
+    color: #191A1C !important;
   }
 
   .nav-link:hover {
@@ -134,7 +134,7 @@
 }
 
 body {
-  background-color: #546e7a;
+  background-color: #417B6B;
   z-index: 0;
   font-family: 'Roboto', sans-serif;
 }
@@ -153,8 +153,8 @@ a:hover {
 
 hr {
 	border-color: #4f5b62;
-	color: #546e7a;
-	background-color: #546e7a;
+	color: #469CFE;
+	background-color: #469CFE;
 }
 
 .content-box {

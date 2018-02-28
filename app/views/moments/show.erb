@@ -2,19 +2,24 @@
 	<div class="row justify-content-center">
 		<div class="col-md-10 content-box">
       <h1>Hello <%=@user.username %>!</h1>
-      <a href="/events/new"><button type="button" class="btn btn-default">Create A New event</button></a>
-
+      <br>
+      <a href="/events/new"><button type="button" class="btn-material-second">Create A New event</button></a>
       <div class="col-6">
+      <br>
       <% @events.each do |event|%>
       <% if event.user_id == @user.id %>
       <!-- Pulls all events and checks if it matches the user id before iterating over them -->
       <h2><%= event.name %></h2>
-      <a href="/events/<%=event.id%>/edit"><i class="fa fa-pencil"></i> Edit event</a>
-      <a href="/events/<%=event.id%>/delete"><i class="fa fa-times"></i> Delete event</a>
+      <a href="/events/<%=event.id%>/edit"><i class="fa fa-pencil"></i> Edit Event</a><br>
+      <a href="/events/<%=event.id%>/delete"><i class="fa fa-times"></i> Delete Event</a>
+      <br>
+      <br>
       <h4><a href="moments/new/<%=event.id%>"><i class="fa fa-plus"></i> New moment</a></h4>
+      <br>
 
       <% event.moments.each do |moment| %>
       <h4></i> <%= moment.name %>
+      <br>
       <a href="/moments/<%= moment.id %>/edit"><i class="fa fa-pencil"></i>Edit</a>
       <a href="/moments/<%= moment.id %>/delete"><i class="fa fa-times"></i>Delete</a>
       </h4>
