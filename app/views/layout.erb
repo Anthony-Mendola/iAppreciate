@@ -1,60 +1,82 @@
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 //EN">
 <html>
   <head>
-    <title>iAppreciate - Appreciate your life!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-HOjmaybB3GQTM8HunY46MvK7ngm9b/eRGOWESCQ/s+Vk4omobTY5+FXqurpSFcbz" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>iAppreciate</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/custom.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js" integrity="sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js" integrity="sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">iAppreciate</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/moments"><i class="fa fa-paperclip"></i> iAppreciate</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
+  <body>
+    <% if flash[:success] %>
+      <div class="alert alert-success">
+        <%= flash[:success] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <%if logged_in?%>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"> <img src="https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1010574831,width=178,height=178/coldplay-flower-of-life.png" width="40"> iAppreciate</a>
 
-    </div>
-  </nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/moments"><i class="fa fa-paperclip"></i> iAppreciate</a>
-  <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/events/new">Create New Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/moments/new">Create New moment</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav col-auto">
+            <li class="nav-item">
+              <a class="nav-link" href= "/logout" >Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+    <%else%>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"> <img src="https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1010574831,width=178,height=178/coldplay-flower-of-life.png" width="40"> iAppreciate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <% if logged_in? %>
-  <li><a href="/events/new">Create New event</a></li>
-  <li><a href="/moments/new">Create New moment</a></li>
-  <li><a href="/logout">Log Out</a></li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
 
-  <% else %>
-  <li><a href="/login">Log In</a></li>
-  <li><a href="/signup">Sign Up</a></li>
-  <% end %>
-  </ul>
-</div>
-</div>
-</nav>
-<div class="col-md-6 col-xs-offset-2">
-
-<%= yield %>
-
-</div>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</body>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" method="post" action="/login">
+            <input  type="text" placeholder="Account" name="username" class="form-control mr-sm-2">
+            <input  class="form-control mr-sm-2" type="password" name="password" placeholder="Password">
+            <button class="btn-material-second my-2 my-sm-0" type="submit">Login</button>
+            <a class="btn-material my-2 my-sm-0" href="/signup">Register</a>
+          </form>
+        </div>
+      </nav>
+      <br>
+    <%end%>
+    <%= yield %>
+  </body>
 </html>
