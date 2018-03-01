@@ -35,6 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
+#finds the correct user from the database and redirects them to their homepage.
   post '/login' do
     @user = User.find_by(:username => params[:username])
     if @user && @user.authenticate(params[:password])
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
     end
   end
 
+#responsible for logging out by clearing the session hash
   get '/logout' do
     if session[:user_id] != nil
       session.clear

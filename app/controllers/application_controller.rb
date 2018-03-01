@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
+#A view can only access instance variables.
 
     get "/" do
       if logged_in?
