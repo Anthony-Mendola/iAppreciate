@@ -1,6 +1,14 @@
+<div class="container">
+<div class="row justify-content-center">
+	<div class="col-md-10 content-box">
+    <br>
+
 <p>Are you sure you want to delete <%= @moment.name %>?</p>
 
 <form method="post" action="/moments/<%=@moment.id%>">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
 <form>
+</div>
+</div>
+</div>
