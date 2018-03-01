@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  get '/users' do
+		@users = User.all
+	end
+
+
   get '/signup' do
     if logged_in?
       redirect '/moments'
@@ -9,15 +14,17 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:password] == ""
-      redirect '/signup'
-    else
-      @user = User.create(:username => params[:username], :password => params[:password])
-      session[:user_id] = @user.id
-    redirect '/moments'
-    end
-  end
-
+		@user = User.new(:username => params[:username], :password => params[:password])
+	    redirect '/signup' if params[:username].empty?
+	    if @user.save
+	      flash[:success] = "Account created."
+	      session[:user_id] = @user.id
+	      redirect '/'
+	    else
+	      redirect '/signup'
+	      flash[:error] = "Error creating account."
+	  	end
+	end
 
   get '/login' do
     if logged_in?

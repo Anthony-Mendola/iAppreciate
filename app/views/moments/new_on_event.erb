@@ -1,6 +1,16 @@
-<h1>New Moment on <%= @event.name %></h1>
 
-<form method="post" action="/moments/new/<%= @event.id %>">
-<input type="text" name="name" placeholder="Moment Name">
-<input class="btn btn-primary" type="submit" name="create" value="Create">
-</form>
+<div class="container">
+<div class="row justify-content-center">
+	<div class="col-md-10 content-box">
+    <br>
+    <h1>New Moment on <%= @event.name %></h1>
+
+    <form method="post" action="/moments/new/<%= @event.id %>">
+    <input class="form-control" type="text" name="name" placeholder="Moment Description" cols="30" rows="4">
+    <br>
+    <input class="btn-material-second" type="submit" name="create" value="Add">
+    <br>
+  </form>
+</div>
+</div>
+</div>

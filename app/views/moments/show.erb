@@ -1,6 +1,8 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-10 content-box">
+			<br>
+			<br>
       <h1>Hello <%=@user.username %>!</h1>
       <br>
       <a href="/events/new"><button type="button" class="btn-material-second">Create A New event</button></a>
@@ -9,12 +11,12 @@
       <% @events.each do |event|%>
       <% if event.user_id == @user.id %>
       <!-- Pulls all events and checks if it matches the user id before iterating over them -->
-      <h2><%= event.name %></h2>
+      <h2><strong><%= event.name %></h2>
       <a href="/events/<%=event.id%>/edit"><i class="fa fa-pencil"></i> Edit Event</a><br>
       <a href="/events/<%=event.id%>/delete"><i class="fa fa-times"></i> Delete Event</a>
       <br>
       <br>
-      <h4><a href="moments/new/<%=event.id%>"><i class="fa fa-plus"></i> New moment</a></h4>
+      <h4><a href="moments/new/<%=event.id%>"><i class="fa fa-plus"></i> Add another moment</a></h4>
       <br>
 
       <% event.moments.each do |moment| %>
