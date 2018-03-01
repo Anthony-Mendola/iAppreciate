@@ -134,8 +134,9 @@
 }
 
 body {
-  background-color: #417B6B;
-  z-index: 0;
+  background-image: url("https://images.pexels.com/photos/34090/pexels-photo.jpg?w=1260&h=750&dpr=3&auto=compress&cs=tinysrgb");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
 }
 

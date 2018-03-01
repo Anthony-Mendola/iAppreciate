@@ -5,8 +5,8 @@ This application allows you keep track of all positive aspects of your events li
 
 The iAppreciate application allows you to:
 1. Login or Signup with your own account
-2. View your daily positive aspects, weekly, monthly or any other user's positive aspects.
-3. Create, Edit, and Delete your iAppreciate details.
+2. View your appreciation diary
+3. Create, Edit, and Delete your iAppreciate moments and event details
 4. You can also share your user page and visitors don't have to login to view.
 
 ## Installation
@@ -29,7 +29,7 @@ shotgun
 7. Enjoy!
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at "". This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/version/1/0/0/) code of conduct.
+Bug reports and pull requests are welcome on GitHub at "https://github.com/Anthony-Mendola/iAppreciate". This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/version/1/0/0/) code of conduct.
 
 ## License
 This application is available as open source under the terms of the [MIT License]"".
