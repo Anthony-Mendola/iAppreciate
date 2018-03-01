@@ -11,6 +11,7 @@
       <% @events.each do |event|%>
       <% if event.user_id == @user.id %>
       <!-- Pulls all events and checks if it matches the user id before iterating over them -->
+			<p>______________________________<p>
       <h2><strong><%= event.name %></h2>
       <a href="/events/<%=event.id%>/edit"><i class="fa fa-pencil"></i> Edit Event</a><br>
       <a href="/events/<%=event.id%>/delete"><i class="fa fa-times"></i> Delete Event</a>
@@ -24,6 +25,7 @@
       <br>
       <a href="/moments/<%= moment.id %>/edit"><i class="fa fa-pencil"></i>Edit</a>
       <a href="/moments/<%= moment.id %>/delete"><i class="fa fa-times"></i>Delete</a>
+
       <br>
       <br>
       </h4>
