@@ -42,3 +42,7 @@ class ApplicationController < Sinatra::Base
     end
 
   end
+
+#Controllers handle the HTTP requests of URL paths,
+#as well as patching and deleting data from the server.
+#The waiter/waitress.

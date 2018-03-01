@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    #@user shouldn't be an instance variable - change it
 		@user = User.new(:username => params[:username], :password => params[:password])
 	    redirect '/signup' if params[:username].empty?
 	    if @user.save
