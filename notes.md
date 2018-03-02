@@ -68,3 +68,4 @@ end
 ---------
 Ensure that we have a different model for every class we build, that we only have one erb file per view, etc. A model handles our Ruby logic, our controllers handle the HTTP requests and connect to our models, and our views either take in or display data to our users.
 Minimize the amount of logic our views contain. Our views should never directly pull from the database  (ie. User.all, etc). All of that should be taken care of in the controller actions, and the data should be passed to the view via a specific controller action.
+-----------------

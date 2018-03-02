@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  get '/users' do
-		@users = User.all
-	end
-
 
   get '/signup' do
     if logged_in?
@@ -14,9 +10,16 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    #@user shouldn't be an instance variable - change it
+    #Should @user be an instance variable?
 		@user = User.new(:username => params[:username], :password => params[:password])
 	    redirect '/signup' if params[:username].empty?
+      #Ask about the code below, looking for the best way to implement username not available
+    #  errors = {}
+  	#if params[:username] == ""
+    #  errors[:username] = "* Username must be filled in."
+  #  elsif User.find_by(username: params[:username])
+    #  errors[:username] = "* Username is not available!"
+  #  end
 	    if @user.save
 	      flash[:success] = "Account created."
 	      session[:user_id] = @user.id

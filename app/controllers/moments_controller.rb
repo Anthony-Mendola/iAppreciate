@@ -1,5 +1,7 @@
 class MomentsController < ApplicationController
 
+  #is it a requirement to use slugs?
+
   get '/moments' do
     redirect_if_not_logged_in
     @user = current_user
@@ -15,18 +17,19 @@ class MomentsController < ApplicationController
     erb :'/moments/new'
   end
 
-  post '/moments/new' do
+  post '/moments/' do
     Moment.create(:name => params[:name], :event_id => params[:event_id])
     redirect '/moments'
     end
 
-# Builds a new moment associated with the Event ID
+# Builds a new moment associated with the Event ID,
   get '/moments/new/:id' do
     redirect_if_not_logged_in
     @event = Event.find_by_id(params[:id])
     erb :'/moments/new_on_event'
   end
 
+#current_user, RESTful routes for nested .
   post '/moments/new/:id' do
     @event = Event.find_by_id(params[:id])
     Moment.create(:name => params[:name], :event_id => params[:id])

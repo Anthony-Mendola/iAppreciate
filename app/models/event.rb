@@ -4,4 +4,6 @@ class Event < ActiveRecord::Base
 end
 
 #Models do the work of sorting classes, methods, and data structures.
-#The chef of the application 
+#The chef of the application
+#Gain a better understanding of how models are working
+#look up belongs_to rails

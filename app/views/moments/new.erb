@@ -10,7 +10,7 @@
       <label>Add To An Existing Event</label><br>
       <% @events.each do |event| %>
       <% if event.user_id == @user.id %>
-			<input type="checkbox" name="event_id" value="<%=event.id%>"><%=event.name%><br>
+			<input required type="radio" name="event_id" value="<%=event.id%>"><%=event.name%><br>
       <% end %>
       <% end %>
       <br>
@@ -20,3 +20,5 @@
     </div>
   </div>
 </div>
+
+<!-- how do I require just 1 checkbox using html forms and not using code? -->
