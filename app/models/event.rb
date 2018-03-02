@@ -5,5 +5,6 @@ end
 
 #Models do the work of sorting classes, methods, and data structures.
 #The chef of the application
-#Gain a better understanding of how models are working
-#look up belongs_to rails
+
+#Specifies a one-to-one association with another class.
+#This method should only be used if this class contains the foreign key.
