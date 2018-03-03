@@ -1,11 +1,26 @@
 <div class="container">
+	<br>
+	<br>
+	<div class="row justify-content-center">
+		<div class="col-md-1">
+			<img src="https://i.imgur.com/pPY04nK.png" width="80" alt="logo">
+		</div>
+		<div class="row center">
+		<div class="col-md-6">
+			<h1 class="header-text" >
+				&nbspAppreciation&nbspDiary
+			</h1>
+		</div>
+	</div>
+</div>
+<div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-10 content-box">
 			<br>
 			<br>
       <h1>Hello <%=@user.username %>!</h1>
       <br>
-      <a href="/events/new"><button type="button" class="btn-material-second">Create A New event</button></a>
+      <a href="/events"><button type="button" class="btn-material-second">Create A New event</button></a>
       <div class="col-6">
       <br>
       <% @events.each do |event|%>

@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
 #responsible for logging out by clearing the session hash
   get '/logout' do
-    if session[:user_id] != nil
+    if session[:user_id] 
       session.clear
       flash[:success] = "Signed out"
       redirect to '/login'

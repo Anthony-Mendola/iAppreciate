@@ -16,7 +16,7 @@ class MomentsController < ApplicationController
     erb :'/moments/new'
   end
 
-  post '/moments/' do
+  post '/moments/new' do
     Moment.create(:name => params[:name], :event_id => params[:event_id])
     redirect '/moments'
     end

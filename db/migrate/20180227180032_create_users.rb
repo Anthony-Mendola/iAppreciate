@@ -6,3 +6,7 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 end
+
+
+#The change method is actually a shorter way of writing up and down methods.
+#While the rollback (down) method is not included, it's implicit in the change method.

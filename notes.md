@@ -32,7 +32,7 @@ Bonus!
 User visits the login page and fills out a form with their email and password. They hit 'submit' to POST that data to a controller route.
 That controller route accesses the user's email and password from the params hash. That info is used to find the appropriate user from the database with a line such as User.find_by(email: params[:email], password: params[:password]). Then, that user's ID is stored as the value of session[:id]
 
-4)
+4) has_secure_password works in conjunction with bcrypt and gives us the ability to store passwords in a secure way in the database.
 
 
 5)

@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
 
-    get '/events/new' do
+    get '/events' do
       redirect_if_not_logged_in
       erb :'/events/new'
     end
 
-    post '/events/' do
+    post '/events/new' do
       @user = current_user
       event = @user.events.create(:name => params[:name])
       moment = event.moments.create(:name => params[:moments][:name])
