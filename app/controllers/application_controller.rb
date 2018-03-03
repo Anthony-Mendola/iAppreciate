@@ -27,11 +27,12 @@ class ApplicationController < Sinatra::Base
     end
 
 # Helper methods are methods that are written in the controller, are accessible
-#in the views, and provide some logical support. 
+#in the views, and provide some logical support.
     helpers do
       def redirect_if_not_logged_in
         if !logged_in?
-          redirect "/login?error=You have to be logged in to do that"
+          flash[:error] = "You need to be logged in to do that."
+          redirect '/login'
         end
       end
 
