@@ -1,6 +1,5 @@
 class MomentsController < ApplicationController
 
-  #is it a requirement to use slugs?
 
   get '/moments' do
     redirect_if_not_logged_in

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-    get '/events/' do
+    get '/events/new' do
       redirect_if_not_logged_in
       erb :'/events/new'
     end
@@ -11,6 +11,11 @@ class EventsController < ApplicationController
       moment = event.moments.create(:name => params[:moments][:name])
       redirect '/moments'
     end
+
+    #Dynamic routes example:
+    #The HTTP request verb, GET matches the get method in our controller.  The /events/1/edit path in the
+    #HTTP request matches our path in this controller method. The 1 is an id parameter that's being passed
+    #into the path, matching the controllers expectation for an id parameter to be passed in place of :id
 
     get '/events/:id/edit' do
       redirect_if_not_logged_in
