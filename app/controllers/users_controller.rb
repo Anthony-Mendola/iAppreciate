@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-
+#presents the signup form
   get '/signup' do
     if logged_in?
       redirect '/moments'
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
+#creates a new user
   post '/signup' do
 		@user = User.new(:username => params[:username], :password => params[:password])
   	if params[:username] == ""
@@ -26,8 +27,9 @@ class UsersController < ApplicationController
 	  	end
 	end
 
+
   get '/login' do
-    if logged_in?
+    if logged_in? #helper method
       redirect '/moments'
     else
       erb :'users/login'
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
   post '/login' do
     @user = User.find_by(:username => params[:username])
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id #session hash stores the user_id
       flash[:success] = "Welcome!"
       redirect '/home'
     else
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
 
 #responsible for logging out by clearing the session hash
   get '/logout' do
-    if session[:user_id] 
+    if session[:user_id]
       session.clear
       flash[:success] = "Signed out"
       redirect to '/login'

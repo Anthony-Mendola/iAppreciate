@@ -1,9 +1,9 @@
-class Event < ActiveRecord::Base
+class Event < ActiveRecord::Base #inherits from ActiveRecord
   belongs_to :user
   has_many :moments
 end
 
-#Models do the work of sorting classes, methods, and data structures.
+#Models determines how data is processed and how it is related to each other.
 #The chef of the application
 
 #Specifies a one-to-one association with another class.

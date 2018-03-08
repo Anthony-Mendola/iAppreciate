@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  has_secure_password #ActiveRecord Macro that works with bcrypt
   has_many :events
   has_many :moments, through: :events
 

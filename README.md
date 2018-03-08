@@ -1,7 +1,7 @@
 
 # iAppreciate - Keep track of your moments of appreciation!
 
-This application allows you keep track of all positive aspects of your events like trips and special occasions. Share with friends and family  Unlike other journal sites, this application focuses primarily on positive aspects of appreciation only.  No more relying on photos to remember how you really felt in that moment, express yourself in words!
+This application allows you keep track of all positive aspects of your events like trips and special occasions. Unlike other journal sites, this application focuses primarily on positive aspects of appreciation only.  No more relying on photos to remember how you really felt in that moment, express yourself in words!
 
 The iAppreciate application allows you to:
 1. Login or Signup with your own account

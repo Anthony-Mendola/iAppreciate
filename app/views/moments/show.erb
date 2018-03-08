@@ -24,7 +24,6 @@
       <div class="col-6">
       <br>
       <% @events.each do |event|%>
-      <% if event.user_id == @user.id %>
       <!-- Pulls all events and checks if it matches the user id before iterating over them -->
 			<p>______________________________<p>
       <h2><strong><%= event.name %></h2>
@@ -34,7 +33,7 @@
       <br>
       <h4><a href="moments/new/<%=event.id%>"><i class="fa fa-plus"></i> Add another moment</a></h4>
       <br>
-
+<!-- iterates through moments associated with the event and displays them -->
       <% event.moments.each do |moment| %>
       <h4></i> <%= moment.name %>
       <br>
@@ -44,7 +43,6 @@
       <br>
       <br>
       </h4>
-      <% end %>
       <% end %>
       <% end %>
     </div>
